@@ -9,7 +9,10 @@ module.exports = async function suspend() {
     () => suspend.resolve(),
     () => idle.resolve(),
     (idled) => {
-      if (idled === false) idle.reject()
+      if (idled === false) {
+        idle.reject(new Error('Resumed before becoming idle'))
+      }
+
       resume.resolve()
     }
   )
