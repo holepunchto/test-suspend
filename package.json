@@ -1,0 +1,40 @@
+{
+  "name": "test-suspend",
+  "version": "1.0.0",
+  "description": "Utilities for testing process suspension",
+  "exports": {
+    "./package": "./package.json",
+    ".": "./index.js"
+  },
+  "imports": {
+    "#runtime": {
+      "bare": "./lib/runtime/bare.js",
+      "node": "./lib/runtime/node.js"
+    }
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "scripts": {
+    "test": "npm run lint && npm run test:bare && npm run test:node",
+    "test:bare": "bare test.js",
+    "test:node": "node test.js",
+    "lint": "prettier . --check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holepunchto/test-suspend.git"
+  },
+  "author": "Holepunch",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/holepunchto/test-suspend/issues"
+  },
+  "homepage": "https://github.com/holepunchto/test-suspend#readme",
+  "devDependencies": {
+    "brittle": "^3.2.1",
+    "prettier": "^3.4.1",
+    "prettier-config-standard": "^7.0.0"
+  }
+}
