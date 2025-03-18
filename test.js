@@ -1,7 +1,7 @@
 const test = require('brittle')
 const suspend = require('.')
 
-test('basic', async (t) => {
+test('basic', { deadlock: false }, async (t) => {
   const s = await suspend()
   t.pass('suspended')
 

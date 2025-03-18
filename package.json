@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/holepunchto/test-suspend#readme",
   "devDependencies": {
-    "brittle": "^3.2.1",
+    "brittle": "^3.13.0",
     "prettier": "^3.4.1",
     "prettier-config-standard": "^7.0.0"
   }
