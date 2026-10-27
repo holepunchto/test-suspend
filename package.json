@@ -17,10 +17,11 @@
     "lib"
   ],
   "scripts": {
-    "test": "npm run lint && npm run test:bare && npm run test:node",
-    "test:bare": "bare test.js",
-    "test:node": "node test.js",
-    "lint": "prettier . --check"
+    "format": "prettier --write . && lunte --fix",
+    "lint": "prettier --check . && lunte",
+    "test": "npm run test:bare && npm run test:node",
+    "test:bare": "brittle-bare --coverage test.js",
+    "test:node": "brittle-node --coverage test.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
   "homepage": "https://github.com/holepunchto/test-suspend#readme",
   "devDependencies": {
     "brittle": "^3.13.1",
+    "lunte": "^1.8.6",
     "prettier": "^3.4.1",
     "prettier-config-holepunch": "^2.0.0"
   }
